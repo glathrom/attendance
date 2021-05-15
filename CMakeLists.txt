@@ -27,8 +27,8 @@ MESSAGE(STATUS "Link Libraries ${OpenCV_LIBS}")
 ################################################################
 
 
-set(SOURCES ${CMAKE_SOURCE_DIR}/src/chapter1.cpp)
-add_executable(chapter1 ${SOURCES})
-target_link_libraries(chapter1 PRIVATE opencv_imgcodecs opencv_core opencv_highgui)
+set(SOURCES ${CMAKE_SOURCE_DIR}/src/display.cpp)
+add_executable(mydisplay ${SOURCES})
+target_link_libraries(mydisplay PRIVATE opencv_imgcodecs opencv_core opencv_highgui)
 
 
