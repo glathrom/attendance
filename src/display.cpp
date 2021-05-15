@@ -6,10 +6,8 @@
 #include <opencv2/highgui.hpp>
 
 
-void displayImage(){
+void displayImage(char *path){
 
-    std::string path = "/home/grant/Projects/attendance/data/whiteboard.jpg";
-    
     std::cout << "Hello, World!" << std::endl;
 
     cv::Mat x = cv::imread(path, cv::IMREAD_COLOR);
@@ -20,9 +18,8 @@ void displayImage(){
 
 }
 
-void displayVideo(){
-
-    std::string path = "/home/grant/Projects/attendance/data/euclid-proposition-35.mp4";
+void displayVideo(char *path){
+    
     cv::VideoCapture cap(path);
     cv::Mat img;
 
@@ -49,11 +46,16 @@ void displayWebCam(){
 }
 
 
-int main(){
+int main(int argc, char **argv){
 
-    //displayImage();
-    //displayVideo();
-    displayWebCam();
+    if( argc < 2 ){
+        std::cout << "displaying webcam" << std::endl;
+        displayWebCam();        
+    } else {
+        displayImage(argv[1]);
+        //displayVideo(argv[1]);
+    }
+
 
     return 0;
 }

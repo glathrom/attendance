@@ -32,3 +32,6 @@ add_executable(mydisplay ${SOURCES})
 target_link_libraries(mydisplay PRIVATE opencv_imgcodecs opencv_core opencv_highgui)
 
 
+set(SOURCES ${CMAKE_SOURCE_DIR}/src/basics.cpp)
+add_executable(basics ${SOURCES})
+target_link_libraries(basics PRIVATE opencv_imgcodecs opencv_core opencv_highgui opencv_imgproc)
