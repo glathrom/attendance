@@ -8,12 +8,8 @@
 
 void displayImage(char *path){
 
-    std::cout << "Hello, World!" << std::endl;
-
     cv::Mat x = cv::imread(path, cv::IMREAD_COLOR);
-
     cv::imshow("image", x);
-
     cv::waitKey(0);
 
 }

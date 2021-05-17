@@ -35,3 +35,7 @@ target_link_libraries(mydisplay PRIVATE opencv_imgcodecs opencv_core opencv_high
 set(SOURCES ${CMAKE_SOURCE_DIR}/src/basics.cpp)
 add_executable(basics ${SOURCES})
 target_link_libraries(basics PRIVATE opencv_imgcodecs opencv_core opencv_highgui opencv_imgproc)
+
+set(SOURCES ${CMAKE_SOURCE_DIR}/src/face.cpp)
+add_executable(faces ${SOURCES})
+target_link_libraries(faces PRIVATE opencv_imgcodecs opencv_core opencv_highgui opencv_imgproc opencv_objdetect)

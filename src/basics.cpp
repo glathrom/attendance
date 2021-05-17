@@ -17,10 +17,18 @@ void greyOut(char *path){
     cv::imshow("image", imgGrey);
     cv::imshow("original", img);
     cv::waitKey(0);
+
 }
 
 void myBlur(char *path){
-    std::cout << *path << std::endl;
+    cv::Mat img = cv::imread(path);
+    cv::Mat blurred;
+
+    cv::GaussianBlur(img, blurred, cv::Size(31,31), 70, 50);
+
+    cv::imshow("image", img);
+    cv::imshow("image2", blurred);
+    cv::waitKey(0);
 }
 
 
@@ -31,7 +39,8 @@ int main(int argc, char **argv){
         return 1;
     }
 
-    greyOut(argv[1]);
+    //greyOut(argv[1]);
+    myBlur(argv[1]);
 
 
     return 0;
